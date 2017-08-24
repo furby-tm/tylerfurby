@@ -193,8 +193,20 @@ body.ready { opacity: 1; }
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
- 
   }
+  
+  .logo-icon {
+   left: - 10px;
+  }
+	
+  .icon {
+   left: -10px;	  
+  }
+	
+  .icon-text {
+   left: -10px;	  
+  }
+	
 }
 
 .button {
