@@ -1,10 +1,3 @@
-var logoEl = document.querySelector('.logo-animation');
-var pathEls = document.querySelectorAll('.logo-animation path:not(.icon-curve)');
-var innerWidth = window.innerWidth;
-var maxWidth = 740;
-var logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
-var logoTimeline = anime.timeline();
-
 var createBouncyButtons = (function() {
   function createButton(el) {
     var pathEl = el.querySelector('path');
@@ -53,12 +46,21 @@ var createBouncyButtons = (function() {
 
 })();
 
-logoEl.style.transform = 'translateY(50px) scale('+logoScale+')';
+var logoAnimation = (function() {
 
-for (var i = 0; i < pathEls.length; i++) {
-  var el = pathEls[i];
-  el.setAttribute('stroke-dashoffset', anime.setDashoffset(el));
-}
+  var logoEl = document.querySelector('.logo-animation');
+  var pathEls = document.querySelectorAll('.logo-animation path:not(.icon-curve)');
+  var innerWidth = window.innerWidth;
+  var maxWidth = 740;
+  var logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
+  var logoTimeline = anime.timeline({ autoplay: false });
+
+  logoEl.style.transform = 'translateY(50px) scale('+logoScale+')';
+
+  for (var i = 0; i < pathEls.length; i++) {
+    var el = pathEls[i];
+    el.setAttribute('stroke-dashoffset', anime.setDashoffset(el));
+  }
 
 logoTimeline
   .add({
