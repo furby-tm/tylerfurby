@@ -2,7 +2,7 @@ var logoEl = document.querySelector('.logo-animation');
 var pathEls = document.querySelectorAll('.logo-animation path:not(.icon-curve)');
 var innerWidth = window.innerWidth;
 var maxWidth = 740;
-var logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 2;
+var logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
 var logoTimeline = anime.timeline();
 
 var createBouncyButtons = (function() {
