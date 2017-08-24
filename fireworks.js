@@ -6,7 +6,7 @@ var fireworks = (function() {
   var pointerX = 0;
   var pointerY = 0;
   var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
-  var colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
+  var colors = ['#F15152', '#728C61', '#61888C', '#EDB183'];
 
   function setCanvasSize() {
     canvasEl.width = window.innerWidth * 2;
