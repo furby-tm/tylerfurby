@@ -186,7 +186,7 @@ logoTimeline
       duration: 2500,
       easing: 'easeOutCubic',
       begin: function(a) { a.animatables[0].target.classList.add('highlighted'); },
-      update: function(a) {
+      update: function(a) {        
         var value = a.animatables[0].target.innerHTML;
         value = parseFloat(value).toFixed(1);
         a.animatables[0].target.innerHTML = value;
@@ -196,9 +196,9 @@ logoTimeline
     })
     .add({
       targets: '.date',
-      innerHTML: function() {
-        var d = new Date();
-        return d.getFullYear();
+      innerHTML: function() { 
+        var d = new Date(); 
+        return d.getFullYear(); 
       },
       round: 1,
       duration: 2500,
@@ -207,3 +207,21 @@ logoTimeline
       complete: function(a) { a.animatables[0].target.classList.remove('highlighted'); },
       offset: '-=2000'
     })
+
+
+  function init() {
+    document.body.classList.add('ready');
+    // logoTimeline.seek(4700);
+    logoTimeline.play();
+  }
+
+  return {
+    init: init
+  }
+
+})();
+
+window.onload = function() {
+  logoAnimation.init();
+  fireworks.setCanvasSize();
+}
