@@ -200,6 +200,9 @@ body.ready { opacity: 1; }
   .logo-icon {
     left: 210px;
   }
+  .dot-i {
+   left: 210px;
+  }
 }
 
 .button {
